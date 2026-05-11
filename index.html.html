@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASKIN | More Than Beauty</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Montserrat:wght@200;300;400&display=swap');
+
+        :root {
+            --bg-dark: #000000;
+            --gold: #c5a36b;
+            --cream: #f4eee8;
+            --gray: #888888;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Montserrat', sans-serif; background-color: var(--bg-dark); color: white; scroll-behavior: smooth; }
+
+        /* Header */
+        header { padding: 40px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #222; }
+        .logo { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; color: var(--gold); letter-spacing: 5px; text-transform: uppercase; }
+        nav a { text-decoration: none; color: var(--gray); margin-left: 25px; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; transition: 0.3s; }
+        nav a:hover { color: var(--gold); }
+
+        /* Hero */
+        .hero { padding: 100px 5%; display: flex; align-items: center; justify-content: space-between; background: linear-gradient(to right, #000, #111); }
+        .hero-text h1 { font-family: 'Cormorant Garamond', serif; font-size: 4.5rem; font-weight: 300; margin-bottom: 20px; }
+        .hero-text p { color: var(--gray); letter-spacing: 3px; margin-bottom: 40px; }
+        .shop-now { padding: 15px 40px; background: var(--gold); color: black; text-decoration: none; text-transform: uppercase; font-size: 0.8rem; font-weight: bold; }
+
+        /* Info Bar */
+        .info-bar { background: var(--cream); color: #333; padding: 30px 5%; display: flex; justify-content: space-around; text-align: center; font-size: 0.7rem; }
+
+        /* Shop Section */
+        .shop-section { padding: 80px 5%; text-align: center; }
+        .cat-buttons { margin-bottom: 50px; }
+        .cat-btn { padding: 15px 40px; border: 1px solid var(--gold); background: none; color: white; cursor: pointer; margin: 0 10px; font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; transition: 0.4s; }
+        .cat-btn:hover, .cat-btn.active { background: var(--gold); color: black; }
+
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .product-card { background: #0a0a0a; border: 1px solid #222; padding: 30px; text-align: left; transition: 0.3s; }
+        .product-card:hover { border-color: var(--gold); }
+        .product-card h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; color: var(--gold); margin-bottom: 10px; }
+        .product-card p { color: var(--gray); font-size: 0.8rem; height: 40px; overflow: hidden; }
+        .price { display: block; margin-top: 15px; font-size: 1.1rem; }
+
+        /* Contact */
+        .footer-info { padding: 80px 5%; border-top: 1px solid #222; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+        .footer-info h3 { font-family: 'Cormorant Garamond', serif; color: var(--gold); margin-bottom: 20px; font-size: 2rem; }
+        .socials a { color: white; text-decoration: none; margin-right: 20px; font-size: 0.8rem; border-bottom: 1px solid var(--gold); padding-bottom: 5px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">ASKIN</div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#shop">Shop</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-text">
+            <h1>More Than <br> Beauty</h1>
+            <p>SKIN • HAIR • YOU</p>
+            <a href="#shop" class="shop-now">SHOP NOW</a>
+        </div>
+    </section>
+
+    <div class="info-bar">
+        <div><strong>CLEAN INGREDIENTS</strong><br>Safe & Gentle</div>
+        <div><strong>EFFECTIVE FORMULAS</strong><br>Visible Results</div>
+        <div><strong>MADE WITH LOVE</strong><br>For your skin & hair</div>
+    </div>
+
+    <section id="shop" class="shop-section">
+        <div class="cat-buttons">
+            <button class="cat-btn" onclick="filter('skincare')">SKINCARE</button>
+            <button class="cat-btn" onclick="filter('haircare')">HAIRCARE</button>
+        </div>
+
+        <div id="skincare-grid" class="product-grid">
+            <div class="product-card"><h4>Cloud Cleanse</h4><p>Gentle daily wash for sensitive skin.</p><span class="price">16.00 €</span></div>
+            <div class="product-card"><h4>Glow Drop</h4><p>Vitamin C serum for instant radiance.</p><span class="price">24.50 €</span></div>
+            <div class="product-card"><h4>Dew Skin Cream</h4><p>Intense 24h hydration boost.</p><span class="price">22.00 €</span></div>
+            <div class="product-card"><h4>Soft Shield SPF</h4><p>Daily sun protection with a matte finish.</p><span class="price">19.00 €</span></div>
+            <div class="product-card"><h4>Night Repair</h4><p>Overnight recovery balm.</p><span class="price">28.00 €</span></div>
+            <div class="product-card"><h4>Eye Revive</h4><p>Anti-fatigue under-eye treatment.</p><span class="price">21.50 €</span></div>
+        </div>
+
+        <div id="haircare-grid" class="product-grid" style="display:none;">
+            <div class="product-card"><h4>Pure Balance</h4><p>Shampoo for all hair types.</p><span class="price">15.00 €</span></div>
+            <div class="product-card"><h4>Silk Repair Oil</h4><p>Nourishing hair treatment for shine.</p><span class="price">26.00 €</span></div>
+            <div class="product-card"><h4>Velvet Mask</h4><p>Deep repair for damaged hair.</p><span class="price">23.50 €</span></div>
+            <div class="product-card"><h4>Scalp Scrub</h4><p>Detoxifying scalp treatment.</p><span class="price">18.00 €</span></div>
+            <div class="product-card"><h4>Luster Mist</h4><p>Weightless shine spray.</p><span class="price">14.50 €</span></div>
+            <div class="product-card"><h4>Silk Conditioner</h4><p>Smoothness and volume in one.</p><span class="price">17.00 €</span></div>
+        </div>
+    </section>
+
+    <section id="contact" class="footer-info">
+        <div>
+            <h3>Visit Us</h3>
+            <p>Rruga "Rexhep Luci", Prishtinë</p>
+            <p>hello@askinbeauty.com</p>
+            <p>+383 49 123 456</p>
+        </div>
+        <div class="socials">
+            <h3>Follow The Vibe</h3>
+            <a href="#">INSTAGRAM</a>
+            <a href="#">TIKTOK</a>
+            <a href="#">SNAPCHAT</a>
+        </div>
+    </section>
+
+    <script>
+        function filter(cat) {
+            document.getElementById('skincare-grid').style.display = (cat === 'skincare') ? 'grid' : 'none';
+            document.getElementById('haircare-grid').style.display = (cat === 'haircare') ? 'grid' : 'none';
+        }
+    </script>
+</body>
+</html>
